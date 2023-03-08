@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<script>
+     var trigger=document.getElementById("trigger");
+      window.onload = function()
+      {
+      var trigger=document.getElementById("trigger");
+      trigger.checked=true;
+      connect();
+      }
+
+      async function connect() 
+      {
+        if (typeof window.ethereum !== 'undefined') {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        window.web3 = new Web3(window.ethereum);
+       console.log('metamask is installed.')
+        } else
+       {
+        console.log("No wallet");
+       }
+      } 
+    async function archie()
+    {
+        try 
+      {
+          await provider.request({
+          method: 'wallet_switchEthereumChain',
+         params: [{ chainId: "0x89"}],
+        });
+        console.log("You have switched to the right network")
+      } 
+      catch (switchError) {
+
+  // The network has not been added to MetaMask
+     if (switchError.code === 4902)
+    {
+      console.log("Please add the Polygon network to MetaMask")
+    }
+     console.log("Cannot switch to the network")
+    }
+    }
+</script>
+<body>
+    <input type="checkbox" id="trigger" style="opacity:0">
+
+    <input type="checkbox" style="opacity:0"></body>
+    <button onclick="archie()">CONECT </button>
+</html>

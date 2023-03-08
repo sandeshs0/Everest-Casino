@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Poker</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../Image/VideoPoker.ico" />
+    <link rel="stylesheet" href="VideoPoker.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+</head>
+<body id="body" class="BACKGROUND">
+    <div id="divLoadScreen" class="LOAD_SCREEN">
+        LOADING...
+    </div>
+    <div style="position: absolute; z-index: 2;">
+        <div id="divGameOver" class="GAMEOVER" ontouchstart="(e || window.event).preventDefault(); _DealClick();" onclick="_DealClick();">
+            GAME OVER
+        </div>
+        <table class="TITLE">
+            <tr>
+                <td style="width: 15%;"></td>
+                <td style="text-align: center; width: 70%;">
+                    <img src="Image/VideoPokerMarquee.jpg" alt="" class="TITLE_IMAGE ROUNDED" />
+                </td>
+                <td style="width: 15%;"></td>
+            </tr>
+        </table>
+        <div id="divHeader" class="HEADER">
+            <div class="HEADER_HR" style="opacity: .1;">
+            </div>
+            <div class="HEADER_HR" style="opacity: .25;">
+            </div>
+            <div class="HEADER_HR" style="opacity: .4;">
+            </div>
+            <div class="HEADER_HR" style="opacity: .55;">
+            </div>
+            <div class="HEADER_HR" style="opacity: .7">
+            </div>
+            <div class="HEADER_HR" style="opacity: .85">
+            </div>
+        </div>
+        <table id="tblMarquee" class="MARQUEE" cellpadding="1" cellspacing="0">
+            <tr style="background-color: #040;">
+                <td style="background-color: #000; border-bottom: none; text-align: left;"></td>
+                <td style="border-radius: 8px 0 0 8px;">
+                    <img alt="Bet 1" src="Image/OneChip.png" />
+                </td>
+                <td>
+                    <img alt="Bet 2" src="Image/TwoChip.png" />
+                </td>
+                <td>
+                    <img alt="Bet 3" src="Image/ThreeChip.png" />
+                </td>
+                <td>
+                    <img alt="Bet 4" src="Image/FourChip.png" />
+                </td>
+                <td style="border-radius: 0 8px 8px 0;">
+                    <img alt="Bet 5" src="Image/FiveChip.png" />
+                </td>
+            </tr>
+            <tr id="row9">
+                <td class="PRIZE">
+                    Royal Flush
+                </td>
+                <td>
+                    250
+                </td>
+                <td>
+                    500
+                </td>
+                <td>
+                    750
+                </td>
+                <td>
+                    1000
+                </td>
+                <td>
+                    4000
+                </td>
+            </tr>
+            <tr id="row8">
+                <td class="PRIZE">
+                    Straight Flush
+                </td>
+                <td>
+                    50
+                </td>
+                <td>
+                    100
+                </td>
+                <td>
+                    150
+                </td>
+                <td>
+                    200
+                </td>
+                <td>
+                    250
+                </td>
+            </tr>
+            <tr id="row7">
+                <td class="PRIZE">
+                    4 of a Kind
+                </td>
+                <td>
+                    25
+                </td>
+                <td>
+                    50
+                </td>
+                <td>
+                    75
+                </td>
+                <td>
+                    100
+                </td>
+                <td>
+                    125
+                </td>
+            </tr>
+            <tr id="row6">
+                <td class="PRIZE">
+                    Full House
+                </td>
+                <td>
+                    9
+                </td>
+                <td>
+                    18
+                </td>
+                <td>
+                    27
+                </td>
+                <td>
+                    36
+                </td>
+                <td>
+                    45
+                </td>
+            </tr>
+            <tr id="row5">
+                <td class="PRIZE">
+                    Flush
+                </td>
+                <td>
+                    6
+                </td>
+                <td>
+                    12
+                </td>
+                <td>
+                    18
+                </td>
+                <td>
+                    24
+                </td>
+                <td>
+                    30
+                </td>
+            </tr>
+            <tr id="row4">
+                <td class="PRIZE">
+                    Straight
+                </td>
+                <td>
+                    4
+                </td>
+                <td>
+                    8
+                </td>
+                <td>
+                    12
+                </td>
+                <td>
+                    16
+                </td>
+                <td>
+                    20
+                </td>
+            </tr>
+            <tr id="row3">
+                <td class="PRIZE">
+                    3 of a Kind
+                </td>
+                <td>
+                    3
+                </td>
+                <td>
+                    6
+                </td>
+                <td>
+                    9
+                </td>
+                <td>
+                    12
+                </td>
+                <td>
+                    15
+                </td>
+            </tr>
+            <tr id="row2">
+                <td class="PRIZE">
+                    2 Pair
+                </td>
+                <td>
+                    2
+                </td>
+                <td>
+                    4
+                </td>
+                <td>
+                    6
+                </td>
+                <td>
+                    8
+                </td>
+                <td>
+                    10
+                </td>
+            </tr>
+            <tr id="row1">
+                <td class="PRIZE">
+                    Jacks or Better
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    2
+                </td>
+                <td>
+                    3
+                </td>
+                <td>
+                    4
+                </td>
+                <td>
+                    5
+                </td>
+            </tr>
+        </table>
+        <div style="text-align: center; width: 100%;">
+            <canvas id="cardCanvas" onmousedown="_OnCanvasClick(event);" style="background-color: transparent; margin: auto;">
+                Browser Unsupported
+            </canvas>
+        </div>
+        <div class="CONTROL_CONTAINER">
+            <div id="divCredits" class="CREDITS ROUNDED">
+                0 CREDITS
+            </div>
+            <table cellspacing="0" style="margin: auto; color: White; white-space: nowrap;">
+                <tr>
+                    <td>
+                        <b id="btnBetDown" ontouchstart="(e || window.event).preventDefault();_Bet('-');" onclick="_Bet('-');" class="BUTTON ROUNDED">-</b>
+                    </td>
+                    <td style="text-align: center;">
+                        <b class="LABEL" style="width: 70px;" id="lblCurrBet">BET 0</b>
+                    </td>
+                    <td>
+                        <b id="btnBetUp" ontouchstart="(e || window.event).preventDefault();_Bet('+');" onclick="_Bet('+');" class="BUTTON ROUNDED">+</b>
+                    </td>
+                    <td>
+                        <b id="btnDeal" class="DEAL_BUTTON BUTTON ROUNDED" ontouchstart="(e || window.event).preventDefault();_DealClick();" onclick="_DealClick();">DEAL</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="VideoPoker.js"></script>
+</body>
+</html>
