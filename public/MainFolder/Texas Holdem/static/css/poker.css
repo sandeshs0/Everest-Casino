@@ -274,7 +274,7 @@ html {
     height: 100px;
     left: 650px;
     position: absolute;
-    top: 400px;
+    top: 500px;
     width: 500px;
 }
 
@@ -315,7 +315,7 @@ html {
     padding: 10px 5px 0px 5px;
     position: absolute;
     text-align: center;
-    bottom: 600px;
+    bottom: 500px;
     width: 160px;
 }
 .setup-button:hover {
@@ -324,7 +324,7 @@ html {
 
 #speed-button {
     cursor: default;
-    bottom: 550px;
+    bottom: 450px;
 }
 
 select {
@@ -340,15 +340,15 @@ select {
 }
 
 #mode-button {
-    bottom: 500px;
+    bottom: 400px;
 }
 
 #help-button {
-    bottom: 450px;
+    bottom: 350px;
 }
 
 #check-button {
-    bottom: 400px;
+    bottom: 300px;
 }
 
 #history {
@@ -377,7 +377,16 @@ select {
     top: 5px;
     width: 600px;
     margin-left: 450px;
-    margin-top: -100px;
+    margin-top: -29px;
+}
+.logo{
+    background-image: -webkit-radial-gradient(rgb(82, 11, 11), rgb(71, 9, 9));
+    /* background: #6d0424; */
+    padding: 10px;
+    display: flex;
+}
+.logo img{
+    width: 150px;
 }
 
 #production-code {
@@ -422,7 +431,7 @@ select {
     left: 25px;
     position: absolute;
     text-align: center;
-    top: 490px;
+    top: 540px;
     width: 350px;
     padding: 10px;
     color: antiquewhite;
@@ -443,7 +452,7 @@ select {
     display: none;
     color: rgb(36, 31, 82);
     font-size: 12px;
-    height: 90%;
+    height: 84%;
     left: 100px;
     display:inline-block;
     border-radius: 10px;
