@@ -1,12 +1,14 @@
 html {
     font-family: sans-serif;
-    background-color: rgb(43, 3, 43);
+    background-image: -webkit-radial-gradient(rgb(82, 11, 11), rgb(71, 9, 9));
+    justify-content: center;
+    align-items: center;
 }
 
 
 .poker-table {
     background-repeat: no-repeat;
-    left: 100px;
+    left: 350px;
     position: absolute;
     height: 411px;
     width: 745px;
@@ -16,6 +18,7 @@ html {
     height: 150px;
     position: absolute;
     width: 150px;
+
 }
 
 #button {
@@ -28,15 +31,17 @@ html {
 }
 
 .name-chips {
-    background-color: gray;
+    background-color: rgb(104, 10, 46);
     border-radius: 4px;
     color: white;
     font-size: 14px;
     height: 33px;
     position: absolute;
+    padding-bottom: 2px;
     text-align: center;
     top: 65px;
     width: 140px;
+    box-shadow: #411f1f 5;
 }
 
 .player-name {
@@ -234,8 +239,8 @@ html {
     width: 50px;
 }
 
-#flop1 {
-}
+/* #flop1 {
+} */
 
 #flop2 {
     left: 52px;
@@ -267,45 +272,50 @@ html {
 
 #action-options {
     height: 100px;
-    left: 110px;
+    left: 650px;
     position: absolute;
-    top: 450px;
+    top: 400px;
     width: 500px;
 }
 
 .action-button {
-    background-color: silver;
+    background-color: rgb(110, 62, 7);
     border-radius: 4px;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: 18px;
     height: 30px;
     left: 0px;
-    padding: 10px 5px 0 5px;
+    padding: 10px 15px 0 15px;
     position: absolute;
     top: 0px;
+    border: 2px solid  rgb(218, 124, 58) ;
+    box-shadow: 0px 0px 5px rgb(214, 218, 23) ;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #setup-options {
     height: 400px;
     left: 900px;
     position: absolute;
-    top: 400px;
+    top: 200px;
+    
+
     width: 200px;
 }
 
 .setup-button {
-    background-color: silver;
+    background-color: rgb(4, 40, 49);
     border-radius: 4px;
     color: white;
     cursor: pointer;
     font-size: 18px;
     height: 30px;
-    left: 0px;
+    left: 500px;
     padding: 10px 5px 0px 5px;
     position: absolute;
     text-align: center;
-    top: 0px;
+    bottom: 600px;
     width: 160px;
 }
 .setup-button:hover {
@@ -314,7 +324,7 @@ html {
 
 #speed-button {
     cursor: default;
-    top: 50px;
+    bottom: 550px;
 }
 
 select {
@@ -330,15 +340,15 @@ select {
 }
 
 #mode-button {
-    top: 100px;
+    bottom: 500px;
 }
 
 #help-button {
-    top: 150px;
+    bottom: 450px;
 }
 
 #check-button {
-    top: 200px;
+    bottom: 400px;
 }
 
 #history {
@@ -355,15 +365,19 @@ select {
 }
 
 #game-response {
+    justify-content: center;
+    align-items: center;
     border: none;
     color: black;
     font-size: 12px;
-    height: 300px;
-    left: 900px;
+    /* height: 300px;
+    left: 900px; */
     position: absolute;
     text-align: center;
     top: 5px;
     width: 600px;
+    margin-left: 450px;
+    margin-top: -100px;
 }
 
 #production-code {
@@ -399,46 +413,126 @@ select {
 }
 
 #quick-raises {
-    background-color: silver;
+    background-color: rgb(6, 3, 31);
+    border:2px solid gold;
+    box-shadow: 0px 0px 10px goldenrod;
     border-radius: 4px;
     font-size: 18px;
     height: 75px;
     left: 25px;
     position: absolute;
     text-align: center;
-    top: 515px;
+    top: 490px;
     width: 350px;
+    padding: 10px;
+    color: antiquewhite;
 }
 #quick-raises a:link {
     color: white;
+    text-shadow: 3px 3px 5px #000000;
     text-decoration: none;
 }
 #quick-raises a:hover {
-    color: white;
-    text-shadow: 3px 3px 4px #000000;
+    color: gold;
+    text-shadow: 3px 3px 7px #000000;
 }
 
 
 #modal-box {
-    background-color: silver;
+    background-color: rgba(8, 18, 59, 0.9);
     display: none;
+    color: rgb(36, 31, 82);
     font-size: 12px;
-    height: 100%;
-    left: 0px;
+    height: 90%;
+    left: 100px;
+    display:inline-block;
+    border-radius: 10px;
     overflow: auto; /* Enable scroll */
     position: fixed;
     text-align: center;
-    top: 0px;
-    width: 100%;
+    top: 50px;
+    width: 80%;
     z-index: 1;  /* Stay on top */
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgb(201, 191, 191);
+}
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+#modal-box img{
+    /* display: flex; */
+    animation: 1s ease-out 0s 1 slide-in;
+    position: absolute;
+    margin-left: 530px;
+    margin-top:40px;
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
 
 #modal-box a:link {
-    color: white;
+    margin-left: -390px;
+    color: rgb(141, 11, 113);
+    border: 3px solid rgb(141, 11, 113);
     text-decoration: none;
+    font-size: 1.5rem;
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* box-shadow: 5px 5px 5px rgb(51, 51, 44); */
+    padding: 10px 30px 10px 30px;
+    border-radius: 25px;
+
 }
 #modal-box a:hover {
     color: white;
-    text-shadow: 3px 3px 4px #000000;
+    background: rgb(141, 11, 113);
+    
 }
 
+.box{
+    background:white;
+    padding: 20px 20px 20px 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 25px rgba(231, 191, 9, 0.5);
+    border:3px solid  rgba(0, 0, 0, 0.973);
+    display: flex;
+    margin-left: -400px;
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.box .slider{
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.box .slider input{
+    height: 20%;
+    width: 100%;
+    -webkit-appearance: none;
+    outline: none;
+    background: rgb(111, 233, 55);
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);
+}
+.box .value{
+    font-size: 60px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color:#6d0424;
+    width: 55px;
+    text-align: center;
+}
+/* .start-button{
+    font-size: 10px;
+    font-family: sans-serif;
+} */
