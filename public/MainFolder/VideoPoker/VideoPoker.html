@@ -15,15 +15,15 @@
         <div id="divGameOver" class="GAMEOVER" ontouchstart="(e || window.event).preventDefault(); _DealClick();" onclick="_DealClick();">
             GAME OVER
         </div>
-        <table class="TITLE">
-            <tr>
+        <div class="TITLE">
+            <!-- <tr>
                 <td style="width: 15%;"></td>
-                <td style="text-align: center; width: 70%;">
-                    <img src="Image/VideoPokerMarquee.jpg" alt="" class="TITLE_IMAGE ROUNDED" />
-                </td>
-                <td style="width: 15%;"></td>
-            </tr>
-        </table>
+                <td style="text-align: left; width: 70%;"> -->
+                    <img src="Image/logo.png" alt="" class="TITLE_IMAGE ROUNDED" />
+                <!-- </td> -->
+                <h1>VIDEO POKER</h1>
+            <!-- </tr> -->
+        </div>
         <div id="divHeader" class="HEADER">
             <div class="HEADER_HR" style="opacity: .1;">
             </div>
@@ -39,21 +39,21 @@
             </div>
         </div>
         <table id="tblMarquee" class="MARQUEE" cellpadding="1" cellspacing="0">
-            <tr style="background-color: #040;">
-                <td style="background-color: #000; border-bottom: none; text-align: left;"></td>
-                <td style="border-radius: 8px 0 0 8px;">
+            <tr style="background-color: transparent">
+                <td style=" border-bottom: none; text-align: left;"></td>
+                <td id="bet-columns" style="border-radius: 8px 0 0 8px;">
                     <img alt="Bet 1" src="Image/OneChip.png" />
                 </td>
-                <td>
+                <td id="bet-columns">
                     <img alt="Bet 2" src="Image/TwoChip.png" />
                 </td>
-                <td>
+                <td id="bet-columns">
                     <img alt="Bet 3" src="Image/ThreeChip.png" />
                 </td>
-                <td>
+                <td id="bet-columns">
                     <img alt="Bet 4" src="Image/FourChip.png" />
                 </td>
-                <td style="border-radius: 0 8px 8px 0;">
+                <td id="bet-columns" style="border-radius: 0 8px 8px 0;">
                     <img alt="Bet 5" src="Image/FiveChip.png" />
                 </td>
             </tr>
